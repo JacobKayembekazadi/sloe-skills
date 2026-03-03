@@ -21,7 +21,8 @@ The Shopify skill has a v1, v2, and v3. v3 exists because v2 had 8 documented bl
 | Skill | Version | Description |
 |-------|---------|-------------|
 | [shopify-theme-converter](./shopify-theme-converter) | v3.0 | Convert any web project into a complete, merchant-operable Shopify store |
-| system-architect | v2.0 | 14-layer system architecture from any product idea | 
+| [system-architect](./system-architect) | v2.0 | 14-layer system architecture from any product idea — state, journeys, failures, security, resilience, observability |
+| [n8n-workflow-patterns](./n8n-workflow-patterns) | v1.0 | Proven architectural patterns for n8n automation — webhook, API, database, AI agent, scheduled |
 | cold-email | v1.0 | B2B outreach sequences that don't read like cold emails |
 | founder-sales | v1.0 | Sales playbooks for founders selling their own product |
 
@@ -92,10 +93,10 @@ The best contributors are people who shipped something with the skill.
 
 ## Roadmap
 
-- [ ] `system-architect` — 14-layer architecture framework
+- [x] `system-architect` — 14-layer architecture framework
+- [x] `n8n-workflow-patterns` — automation design patterns
 - [ ] `cold-email` — B2B outreach methodology
 - [ ] `founder-sales` — sales conversation playbooks
-- [ ] `n8n-workflow-patterns` — automation design patterns
 - [ ] `api-design` — REST/GraphQL/webhook design standards
 - [ ] `mobile-responsive` — systematic mobile audit + fix patterns
 
