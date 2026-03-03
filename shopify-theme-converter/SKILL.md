@@ -462,7 +462,7 @@ In addition to v2 checklist, add:
 
 ## Lesson Log (real delivery learnings)
 
-**2026-03-03 — Athyre (first real client):**
+**2026-03-03 — Fashion athleisure client (v3 first live delivery):**
 - `mix-blend-difference` on hero text breaks on Android Chrome — remove it, use explicit text-white + controlled overlay
 - YouTube iframe `autoplay` blocked on iOS Safari — always upload a static fallback image
 - Logo clipping: `max-height` default of 60px is too tight for wordmark logos — default 80px, range to 200px

@@ -2,82 +2,109 @@
 
 **Agent skills built in production, not in theory.**
 
-Each skill is a structured markdown file that tells an AI agent exactly how to do a specific task — methodology, patterns, decision frameworks, and real lessons from live client work.
+Structured markdown methodologies that tell AI agents exactly how to execute complex tasks — with decision frameworks, copy-paste patterns, and real lesson logs from live client work.
 
-Built by [Jacob Kayembe Kazadi](https://github.com/JacobKayembekazadi) — AI solutions consultant and AI-native builder.
+By [Jacob Kayembe Kazadi](https://github.com/JacobKayembekazadi) — AI solutions consultant, AI-native builder.
 
 ---
 
-## Install
+## Why these are different
 
-```bash
-# OpenClaw
-npx openclaw skill add https://github.com/JacobKayembekazadi/sloe-skills/tree/main/<skill-name>
+Most prompt libraries are written speculatively. These come from real sessions with real clients. Every skill has a **Lesson Log** — documented findings from actual deliveries that make the methodology more accurate over time.
 
-# Manual — copy SKILL.md to your agent's skills directory
-curl -O https://raw.githubusercontent.com/JacobKayembekazadi/sloe-skills/main/<skill-name>/SKILL.md
-```
+The Shopify skill has a v1, v2, and v3. v3 exists because v2 had 8 documented blind spots found during a live client delivery. That's the difference.
 
 ---
 
 ## Skills
 
-| Skill | Description | Status |
-|-------|-------------|--------|
-| [shopify-theme-converter](./shopify-theme-converter) | Convert any web project into a complete, merchant-operable Shopify store. Performance gates, mobile standards, tracking events, Klaviyo wiring, client handoff docs. | ✅ v3.0 |
-| system-architect | 14-layer system architecture from any product idea — state, journeys, failures, security, resilience, observability, experience. | 🔜 |
-| cold-email | B2B cold email sequences that don't read like cold emails. Positioning, subject line patterns, follow-up cadence. | 🔜 |
-| founder-sales | Sales conversation playbooks for founders selling their own product. Discovery, objection handling, closing. | 🔜 |
+| Skill | Version | Description |
+|-------|---------|-------------|
+| [shopify-theme-converter](./shopify-theme-converter) | v3.0 | Convert any web project into a complete, merchant-operable Shopify store |
+| system-architect | v2.0 | 14-layer system architecture from any product idea | 
+| cold-email | v1.0 | B2B outreach sequences that don't read like cold emails |
+| founder-sales | v1.0 | Sales playbooks for founders selling their own product |
 
-More shipping weekly.
-
----
-
-## What Makes These Different
-
-Most prompt libraries are theoretical. These are built from real sessions.
-
-`shopify-theme-converter v3` was used to build and ship a merchant-operable Shopify theme in one session:
-- Client feedback integrated same day
-- Full mobile responsive pass
-- Klaviyo BIS + pixel events wired
-- Dashboard-only operation post-handoff — no developer dependency
-- Every lesson learned added to the skill's `Lesson Log`
-
-Skills get versioned when real gaps are found. v3 exists because v2 had 8 documented blind spots from a live delivery.
+*More shipping regularly.*
 
 ---
 
-## Skill Format
+## How to use
+
+### With OpenClaw
+Copy `SKILL.md` into your OpenClaw workspace skills directory:
+```
+~/.openclaw/workspace/skills/<skill-name>/SKILL.md
+```
+Then tell your agent: *"Use the shopify-theme-converter skill to convert this project"*
+
+### With Claude / any agent
+Paste the `SKILL.md` contents into your system prompt or reference it at the start of a session:
+*"Follow the methodology in this skill: [paste SKILL.md]"*
+
+### With Cursor / Windsurf
+Add `SKILL.md` to your `.cursor/rules` or reference it in your project context.
+
+---
+
+## Skill format
 
 ```
 skill-name/
-└── SKILL.md
+├── SKILL.md          # Full methodology — the only required file
+└── references/       # Optional supporting docs (patterns, examples, templates)
+    ├── patterns.md
+    └── examples.md
 ```
 
-Frontmatter:
+### SKILL.md frontmatter
 
 ```yaml
 ---
 name: skill-name
 version: 1.0
-description: What it does and when to use it.
+description: One sentence. What it does and when to use it.
 updated: YYYY-MM-DD
 ---
 ```
+
+### What every skill contains
+
+- **Quick reference** — when to use it, what it outputs
+- **Phased workflow** — step-by-step with decision points
+- **Copy-paste patterns** — code/templates ready to use
+- **Lesson Log** — real findings from production use
 
 ---
 
 ## Contributing
 
-Found a gap in production? Open a PR with the fix and a real example.
+Skills improve through real use. If you run a skill on a live project and find a gap:
+
+1. Fork the repo
+2. Add your finding to the skill's `## Lesson Log` with the date
+3. If it warrants a workflow change, update the relevant phase
+4. Open a PR — include what you built, what broke, what you learned
+
+The best contributors are people who shipped something with the skill.
+
+---
+
+## Roadmap
+
+- [ ] `system-architect` — 14-layer architecture framework
+- [ ] `cold-email` — B2B outreach methodology
+- [ ] `founder-sales` — sales conversation playbooks
+- [ ] `n8n-workflow-patterns` — automation design patterns
+- [ ] `api-design` — REST/GraphQL/webhook design standards
+- [ ] `mobile-responsive` — systematic mobile audit + fix patterns
 
 ---
 
 ## License
 
-MIT.
+MIT. Use freely, attribution appreciated but not required.
 
 ---
 
-*Built with [OpenClaw](https://openclaw.ai)*
+*Built with [OpenClaw](https://openclaw.ai) · [Sloe Labs](https://sloelabs.com)*
