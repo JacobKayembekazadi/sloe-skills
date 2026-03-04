@@ -1,18 +1,24 @@
-# Sloe Skills
+<div align="center">
 
-**Agent skills built in production, not in theory.**
+<h1>🧠 sloe-skills</h1>
+<p><strong>Agent skill packs built in production, not in theory.</strong></p>
 
-Structured markdown methodologies that tell AI agents exactly how to execute complex tasks — with decision frameworks, copy-paste patterns, and real lesson logs from live client work.
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Skills](https://img.shields.io/badge/Skills-3_published-blue.svg)](#skills)
+[![Built by Sloe Labs](https://img.shields.io/badge/Built_by-Sloe_Labs-black.svg)](https://sloelabs.com)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-By [Jacob Kayembe Kazadi](https://github.com/JacobKayembekazadi) — AI solutions consultant, AI-native builder.
+</div>
 
 ---
 
-## Why these are different
+## What is this?
 
-Most prompt libraries are written speculatively. These come from real sessions with real clients. Every skill has a **Lesson Log** — documented findings from actual deliveries that make the methodology more accurate over time.
+Structured markdown files that tell AI agents *exactly* how to execute complex, multi-step tasks — without hallucinating steps, skipping edge cases, or forgetting hard-won lessons.
 
-The Shopify skill has a v1, v2, and v3. v3 exists because v2 had 8 documented blind spots found during a live client delivery. That's the difference.
+Most prompt libraries are written speculatively. These come from real sessions with real consequences — client deliverables, production deployments, live systems.
+
+> The Shopify skill has a v1, v2, and v3. v3 exists because v2 had 8 documented blind spots found in production.
 
 ---
 
@@ -20,92 +26,41 @@ The Shopify skill has a v1, v2, and v3. v3 exists because v2 had 8 documented bl
 
 | Skill | Version | Description |
 |-------|---------|-------------|
-| [shopify-theme-converter](./shopify-theme-converter) | v3.0 | Convert any web project into a complete, merchant-operable Shopify store |
-| [system-architect](./system-architect) | v2.0 | 14-layer system architecture from any product idea — state, journeys, failures, security, resilience, observability |
-| [n8n-workflow-patterns](./n8n-workflow-patterns) | v1.0 | Proven architectural patterns for n8n automation — webhook, API, database, AI agent, scheduled |
-| cold-email | v1.0 | B2B outreach sequences that don't read like cold emails |
-| founder-sales | v1.0 | Sales playbooks for founders selling their own product |
-
-*More shipping regularly.*
+| [`shopify-theme-converter`](./shopify-theme-converter/) | v3 | Convert any web app (React, Next.js, Vue) into a production Shopify 2.0 theme |
+| [`system-architect`](./system-architect/) | v2 | Full-stack architecture analysis with risk scoring and recommendations |
+| [`n8n-workflow-patterns`](./n8n-workflow-patterns/) | v1 | Production-tested n8n automation patterns for business ops |
 
 ---
 
 ## How to use
 
-### With OpenClaw
-Copy `SKILL.md` into your OpenClaw workspace skills directory:
-```
-~/.openclaw/workspace/skills/<skill-name>/SKILL.md
-```
-Then tell your agent: *"Use the shopify-theme-converter skill to convert this project"*
+Drop a skill into your agent context before the task:
 
-### With Claude / any agent
-Paste the `SKILL.md` contents into your system prompt or reference it at the start of a session:
-*"Follow the methodology in this skill: [paste SKILL.md]"*
+```
+Read shopify-theme-converter/SKILL.md, then convert this React app into a Shopify theme.
+```
 
-### With Cursor / Windsurf
-Add `SKILL.md` to your `.cursor/rules` or reference it in your project context.
+Works with Claude, GPT-4, Gemini, and any instruction-following model.
 
 ---
 
-## Skill format
+## Stack
 
-```
-skill-name/
-├── SKILL.md          # Full methodology — the only required file
-└── references/       # Optional supporting docs (patterns, examples, templates)
-    ├── patterns.md
-    └── examples.md
-```
-
-### SKILL.md frontmatter
-
-```yaml
----
-name: skill-name
-version: 1.0
-description: One sentence. What it does and when to use it.
-updated: YYYY-MM-DD
----
-```
-
-### What every skill contains
-
-- **Quick reference** — when to use it, what it outputs
-- **Phased workflow** — step-by-step with decision points
-- **Copy-paste patterns** — code/templates ready to use
-- **Lesson Log** — real findings from production use
+![Markdown](https://img.shields.io/badge/Markdown-000000?style=flat&logo=markdown&logoColor=white)
+![Claude](https://img.shields.io/badge/Claude-D4A96A?style=flat&logo=anthropic&logoColor=white)
+![OpenAI](https://img.shields.io/badge/GPT--4-412991?style=flat&logo=openai&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-4285F4?style=flat&logo=google&logoColor=white)
 
 ---
 
 ## Contributing
 
-Skills improve through real use. If you run a skill on a live project and find a gap:
+Skills improve through use. Found a blind spot? Open an issue or PR with the lesson.
 
-1. Fork the repo
-2. Add your finding to the skill's `## Lesson Log` with the date
-3. If it warrants a workflow change, update the relevant phase
-4. Open a PR — include what you built, what broke, what you learned
-
-The best contributors are people who shipped something with the skill.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the format.
 
 ---
 
-## Roadmap
-
-- [x] `system-architect` — 14-layer architecture framework
-- [x] `n8n-workflow-patterns` — automation design patterns
-- [ ] `cold-email` — B2B outreach methodology
-- [ ] `founder-sales` — sales conversation playbooks
-- [ ] `api-design` — REST/GraphQL/webhook design standards
-- [ ] `mobile-responsive` — systematic mobile audit + fix patterns
-
----
-
-## License
-
-MIT. Use freely, attribution appreciated but not required.
-
----
-
-*Built with [OpenClaw](https://openclaw.ai) · [Sloe Labs](https://sloelabs.com)*
+<div align="center">
+<sub>Built by <a href="https://sloelabs.com">Sloe Labs</a> · MIT License</sub>
+</div>
